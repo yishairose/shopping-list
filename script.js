@@ -62,7 +62,9 @@ function saveTolocalStorage() {
 }
 
 window.addEventListener('load', () => {
-    itemsArray = JSON.parse(localStorage.getItem('items'));
+    if (localStorage.getItem('items')) {
+        itemsArray = JSON.parse(localStorage.getItem('items'));
+    }
     console.log(itemsArray);
     populateDom(itemsArray);
 })
